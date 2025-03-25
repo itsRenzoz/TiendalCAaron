@@ -41,4 +41,8 @@ public class CategoriaServiceImpl implements CategoriaService {
     public void delete(Categoria categoria) {
         categoriaDao.delete(categoria);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357

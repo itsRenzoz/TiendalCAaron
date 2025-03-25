@@ -8,7 +8,11 @@
     <body>
         <!-- 1 Sección para crear el boton de agregar... llamará a una ventana modal-->
         <section th:fragment="botonesAgregar" class="py-4 mb-4 bg-light">
+<<<<<<< HEAD
             <div class="container" sec:authorize="hasRole('ROLE_ADMIN')">
+=======
+            <div class="container">
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
                 <div class="row">
                     <div class="col-md-3">   
                         <button 
@@ -84,7 +88,11 @@
                                             <td>[[${contador.count}]]</td>
                                             <td>[[${categoria.descripcion}]]</td>
                                             <td th:text="${categoria.activo} ? 'Activa' : 'Inactiva'" />
+<<<<<<< HEAD
                                             <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/categoria/eliminar/}+${categoria.idCategoria}"
+=======
+                                            <td><a th:href="@{/categoria/eliminar/}+${categoria.idCategoria}"
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
                                                    class="btn btn-danger">
                                                     <i class="fas fa-trash"></i> [[#{accion.eliminar}]]</a>
                                                 <a th:href="@{/categoria/modificar/}+${categoria.idCategoria}"

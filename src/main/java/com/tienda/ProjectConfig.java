@@ -1,17 +1,26 @@
 package com.tienda;
 
 import java.util.Locale;
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
+=======
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
+<<<<<<< HEAD
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+=======
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+<<<<<<< HEAD
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+=======
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -23,6 +32,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 public class ProjectConfig implements WebMvcConfigurer {
+<<<<<<< HEAD
 
     /* Los siguientes métodos son para incorpoOrar el tema de internaciooonalización en el proyecto */
     
@@ -35,6 +45,11 @@ public class ProjectConfig implements WebMvcConfigurer {
     }
 
  /* localeResolver se utiliza para crear una sesión de cambio de idioma*/
+=======
+    /* Los siguientes métodos son para incorporar el tema de internacionalización en el proyecto */
+    
+    /* localeResolver se utiliza para crear una sesión de cambio de idioma*/
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
     @Bean
     public LocaleResolver localeResolver() {
         var slr = new SessionLocaleResolver();
@@ -60,12 +75,20 @@ public class ProjectConfig implements WebMvcConfigurer {
     //Bean para poder acceder a los Messages.properties en código...
     @Bean("messageSource")
     public MessageSource messageSource() {
+<<<<<<< HEAD
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+=======
+        ResourceBundleMessageSource messageSource= new ResourceBundleMessageSource();
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
         messageSource.setBasenames("messages");
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
     /* Los siguiente métodos son para implementar el tema de seguridad dentro del proyecto */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
@@ -73,6 +96,7 @@ public class ProjectConfig implements WebMvcConfigurer {
         registry.addViewController("/index").setViewName("index");
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/registro/nuevo").setViewName("/registro/nuevo");
+<<<<<<< HEAD
     }
 
     @Bean
@@ -90,6 +114,25 @@ public class ProjectConfig implements WebMvcConfigurer {
                         "/categoria/modificar/**", "/categoria/eliminar/**",
                         "/usuario/nuevo", "/usuario/guardar",
                         "/usuario/modificar/**", "/usuario/eliminar/**",
+=======
+ }
+
+@Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .authorizeHttpRequests((request) -> request
+                .requestMatchers("/","/index","/errores/**",
+                        "/carrito/**","/pruebas/**","/reportes/**",
+                        "/registro/**","/js/**","/webjars/**")
+                        .permitAll()
+                .requestMatchers(
+                        "/producto/nuevo","/producto/guardar",
+                        "/producto/modificar/**","/producto/eliminar/**",
+                        "/categoria/nuevo","/categoria/guardar",
+                        "/categoria/modificar/**","/categoria/eliminar/**",
+                        "/usuario/nuevo","/usuario/guardar",
+                        "/usuario/modificar/**","/usuario/eliminar/**",
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
                         "/reportes/**"
                 ).hasRole("ADMIN")
                 .requestMatchers(
@@ -106,11 +149,17 @@ public class ProjectConfig implements WebMvcConfigurer {
         return http.build();
     }
 
+<<<<<<< HEAD
     
     
     /* El siguiente método se utiliza para completar la clase no es 
     realmente funcional, la próxima semana se reemplaza con usuarios de BD */
     /*@Bean
+=======
+/* El siguiente método se utiliza para completar la clase no es 
+    realmente funcional, la próxima semana se reemplaza con usuarios de BD */    
+    @Bean
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
     public UserDetailsService users() {
         UserDetails admin = User.builder()
                 .username("juan")
@@ -128,5 +177,10 @@ public class ProjectConfig implements WebMvcConfigurer {
                 .roles("USER")
                 .build();
         return new InMemoryUserDetailsManager(user, sales, admin);
+<<<<<<< HEAD
     }*/
 }
+=======
+    }
+}
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357

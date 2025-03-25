@@ -10,7 +10,11 @@ import java.io.Serializable;
 public class Producto implements Serializable {
 
     private static final long serialVersionUID = 1L;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
@@ -23,9 +27,15 @@ public class Producto implements Serializable {
     @Column(name = "ruta_imagen")
     private String rutaImagen;
     private boolean activo;
+<<<<<<< HEAD
     
     @ManyToOne​
     @JoinColumn(name="id_categoria")
+=======
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria")
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
     Categoria categoria;
 
     public Producto() {
@@ -39,7 +49,10 @@ public class Producto implements Serializable {
         this.rutaImagen = imagen;
         this.activo = activo;
     }
+<<<<<<< HEAD
     
     
 
+=======
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
 }

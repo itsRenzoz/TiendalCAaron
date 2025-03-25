@@ -100,6 +100,7 @@
             <groupId>com.google.firebase</groupId>
             <artifactId>firebase-admin</artifactId>
             <version>9.1.1</version>
+<<<<<<< HEAD
         </dependency>
         
         <dependency>
@@ -123,6 +124,19 @@
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
         
+=======
+        </dependency>  
+          <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+
+    <dependency>
+        <groupId>org.thymeleaf.extras</groupId>
+        <artifactId>thymeleaf-extras-springsecurity6</artifactId>
+    </dependency>
+                                                                                         
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
     </dependencies>
 
     <build>

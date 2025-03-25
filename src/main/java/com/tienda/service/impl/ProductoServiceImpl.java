@@ -41,14 +41,21 @@ public class ProductoServiceImpl implements ProductoService {
     public void delete(Producto producto) {
         productoDao.delete(producto);
     }
+<<<<<<< HEAD
 
     // Lista de productos con precio entre ordendados por descripción ConsultaAmpliada
     @Override
+=======
+    
+    // Lista de productos con precio entre ordendados por descripción ConsultaAmpliada
+@Override
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
     @Transactional(readOnly = true)
     public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup) {
         return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
     }
 
+<<<<<<< HEAD
     @Override
     @Transactional(readOnly = true)
     public List<Producto> metodoJPQL(double precioInf, double precioSup) {
@@ -57,6 +64,15 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     @Transactional(readOnly = true)
+=======
+       @Override
+    @Transactional(readOnly=true)    
+    public List<Producto> metodoJPQL(double precioInf, double precioSup) {
+        return productoDao.metodoJPQL(precioInf, precioSup);
+    }
+     @Override
+    @Transactional(readOnly=true)    
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
     public List<Producto> metodoNativo(double precioInf, double precioSup) {
         return productoDao.metodoNativo(precioInf, precioSup);
     }

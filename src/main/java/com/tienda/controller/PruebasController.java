@@ -40,6 +40,7 @@ public class PruebasController {
         return "/pruebas/listado";
     }
     
+<<<<<<< HEAD
    //Los métodos siguientes son para la prueba de consultas ampliadas
     @GetMapping("/listado2")
     public String listado2(Model model) {
@@ -48,6 +49,17 @@ public class PruebasController {
         model.addAttribute("productos", productos);
         return "/pruebas/listado2";
     }
+=======
+        //Los métodos siguientes son para la prueba de consultas ampliadas
+    @GetMapping("/listado2")
+    public String listado2(Model model) {
+        var productos = productoService.getProductos(false);
+        model.addAttribute("totalProductos", productos.size());
+        model.addAttribute("productos", productos);
+        return "/pruebas/listado2";
+    }
+    
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
 
     @PostMapping("/query1")
     public String consultaQuery1(@RequestParam(value = "precioInf") double precioInf,
@@ -56,10 +68,17 @@ public class PruebasController {
         model.addAttribute("productos", productos);
         model.addAttribute("precioInf", precioInf);
         model.addAttribute("precioSup", precioSup);
+<<<<<<< HEAD
         model.addAttribute("totalProductos", productos.size());            
         return "/pruebas/listado2";
     }
     
+=======
+        return "/consulta/listado";
+    }
+    
+    
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
     @PostMapping("/query2")
     public String consultaQuery2(@RequestParam(value = "precioInf") double precioInf,
             @RequestParam(value = "precioSup") double precioSup, Model model) {
@@ -70,8 +89,12 @@ public class PruebasController {
         model.addAttribute("precioSup", precioSup);
         return "/pruebas/listado2";
     }
+<<<<<<< HEAD
     
      @PostMapping("/query3")
+=======
+ @PostMapping("/query3")
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
     public String consultaQuery3(@RequestParam(value = "precioInf") double precioInf,
             @RequestParam(value = "precioSup") double precioSup, Model model) {
         var productos = productoService.metodoNativo(precioInf, precioSup);
@@ -81,5 +104,9 @@ public class PruebasController {
         model.addAttribute("precioSup", precioSup);
         return "/pruebas/listado2";
     }
+<<<<<<< HEAD
  
+=======
+    
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
 }

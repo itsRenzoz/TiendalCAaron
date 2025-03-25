@@ -11,7 +11,11 @@ import java.util.List;
 public class Categoria implements Serializable {
 
     private static final long serialVersionUID = 1L;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_categoria")
@@ -23,9 +27,15 @@ public class Categoria implements Serializable {
     private boolean activo;
 
     @OneToMany
+<<<<<<< HEAD
     @JoinColumn(name="id_categoria",updatable=false)
     List<Producto> productos;
     
+=======
+    @JoinColumn(name = "id_categoria", updatable = false)
+    List<Producto> productos;
+
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
     public Categoria() {
     }
 
@@ -33,7 +43,10 @@ public class Categoria implements Serializable {
         this.descripcion = descripcion;
         this.activo = activo;
     }
+<<<<<<< HEAD
     
     
+=======
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
 
 }

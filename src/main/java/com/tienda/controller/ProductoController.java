@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Controller
 @RequestMapping("/producto")
 public class ProductoController {
+<<<<<<< HEAD
     
     @Autowired
     private ProductoService productoService;
@@ -41,12 +42,42 @@ public class ProductoController {
     @PostMapping("/guardar")
     public String productoGuardar(Producto producto,
             @RequestParam("imagenFile") MultipartFile imagenFile) {        
+=======
+
+    @Autowired
+    private ProductoService productoService;
+    @Autowired
+    private CategoriaService categoriaService;
+
+    @GetMapping("/listado")
+    public String listado(Model model) {
+        var lista=productoService.getProductos(false);
+        var categorias = categoriaService.getCategorias(false);
+        model.addAttribute("productos", lista);
+        model.addAttribute("categorias", categorias);
+        model.addAttribute("totalProductos", lista.size());
+        return "/producto/listado";
+    }
+
+
+
+    @Autowired
+    private FirebaseStorageServiceImpl firebaseStorageService;
+
+    @PostMapping("/guardar")
+    public String productoGuardar(Producto producto, @RequestParam("imagenFile") MultipartFile imagenFile) {
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
         if (!imagenFile.isEmpty()) {
             productoService.save(producto);
             producto.setRutaImagen(
                     firebaseStorageService.cargaImagen(
+<<<<<<< HEAD
                             imagenFile, 
                             "producto", 
+=======
+                            imagenFile,
+                            "producto",
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
                             producto.getIdProducto()));
         }
         productoService.save(producto);
@@ -62,9 +93,15 @@ public class ProductoController {
     @GetMapping("/modificar/{idProducto}")
     public String productoModificar(Producto producto, Model model) {
         producto = productoService.getProducto(producto);
+<<<<<<< HEAD
         var categorias=categoriaService.getCategorias(false);
         model.addAttribute("producto", producto);
         model.addAttribute("categorias",categorias);
+=======
+        var categorias = categoriaService.getCategorias(false);
+        model.addAttribute("categorias", categorias);
+        model.addAttribute("producto", producto);
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
         return "/producto/modifica";
     }
 }

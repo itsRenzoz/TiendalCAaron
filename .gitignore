@@ -4,7 +4,24 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+<<<<<<< HEAD
 ### STS ###
+=======
+### OS specific ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+### Firebase ###
+src/main/resources/firebase/*.json
+
+### IDE specific ###
+# STS
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
 .apt_generated
 .classpath
 .factorypath
@@ -13,13 +30,21 @@ target/
 .springBeans
 .sts4-cache
 
+<<<<<<< HEAD
 ### IntelliJ IDEA ###
+=======
+# IntelliJ IDEA
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
 .idea
 *.iws
 *.iml
 *.ipr
 
+<<<<<<< HEAD
 ### NetBeans ###
+=======
+# NetBeans
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
 /nbproject/private/
 /nbbuild/
 /dist/
@@ -29,6 +54,11 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+<<<<<<< HEAD
 ### VS Code ###
 .vscode/
 src/main/resources/firebase/*.json
+=======
+# VS Code
+.vscode/
+>>>>>>> f944b19080e2ca2d9e6c50c5f7e2413208636357
