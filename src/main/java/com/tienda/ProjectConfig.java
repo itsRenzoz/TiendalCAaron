@@ -24,7 +24,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @Configuration
 public class ProjectConfig implements WebMvcConfigurer {
 
-    /* Los siguientes métodos son para incorporar el tema de internaciooonalización en el proyecto */
+    /* Los siguientes métodos son para incorpoOrar el tema de internaciooonalización en el proyecto */
     
      @Autowired
     private UserDetailsService userDetailsService;
